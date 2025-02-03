@@ -33,25 +33,16 @@ function rotateAnnouncements() {
     currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
 }
 
+// Form Submission
+document.getElementById('orderForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you! Your order has been received.\nWe will contact you shortly.');
+    e.target.reset();
+});
+
 // Initialize
 setInterval(rotateAnnouncements, 3500);
 rotateAnnouncements();
-
-// added now
-
-// Smooth scroll to order section
-document.querySelectorAll('a[href="#order"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('orderSection').scrollIntoView({
-            behavior: 'smooth'
-        });
-        closeNav();
-    });
-});
-
-// Update navigation links in HTML
-<a href="#order" onclick="closeNav()">Place Order</a>
 
 
 
