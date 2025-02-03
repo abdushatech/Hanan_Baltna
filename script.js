@@ -1,4 +1,4 @@
-// Toggle navigation
+// Navigation Functions
 function toggleNav() {
     document.body.classList.toggle('nav-open');
 }
@@ -7,22 +7,22 @@ function closeNav() {
     document.body.classList.remove('nav-open');
 }
 
-// Close nav when clicking outside
-document.addEventListener('click', function(event) {
+// Click Outside to Close
+document.addEventListener('click', (event) => {
     const sidenav = document.getElementById('sidenav');
-    const hamburger = document.querySelector('.hamburger-menu');
+    const hamburger = document.querySelector('.hamburger');
     
     if (!sidenav.contains(event.target) && !hamburger.contains(event.target)) {
         closeNav();
     }
 });
 
-// Rest of the existing JavaScript remains same
+// Dynamic Announcements
 const announcements = [
-    "Special Discounts Today Only!",
-    "Free Delivery on Orders Over $50!",
-    "New Products Arrived!",
-    "24/7 Customer Support Available"
+    "🛍 Special Weekend Sale - 30% Off!",
+    "🚚 Free Shipping on Orders Over $75",
+    "🎉 New Collection Just Arrived!",
+    "📞 24/7 Customer Support Available"
 ];
 
 let currentAnnouncement = 0;
@@ -33,18 +33,13 @@ function rotateAnnouncements() {
     currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
 }
 
-document.getElementById('orderForm').addEventListener('submit', function(e) {
+// Form Submission
+document.getElementById('orderForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Order received! We will contact you shortly.');
-    this.reset();
+    alert('Thank you! Your order has been received.\nWe will contact you shortly.');
+    e.target.reset();
 });
 
-// Font Awesome
-const fa = document.createElement('link');
-fa.rel = 'stylesheet';
-fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
-document.head.appendChild(fa);
-
 // Initialize
-setInterval(rotateAnnouncements, 3000);
+setInterval(rotateAnnouncements, 3500);
 rotateAnnouncements();
