@@ -42,18 +42,21 @@
 
         <section class="order-form">
             <h2>Place Your Order</h2>
-            <form id="orderForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Order Details..." rows="4" required></textarea>
-                </div>
-                <button type="submit">Submit Order</button>
-            </form>
+           <form id="orderForm" action="https://formspree.io/f/{your-form-id}" method="POST">
+    <!-- Add hidden email field -->
+    <input type="hidden" name="_replyto" value="hananbedru33@gmail.com">
+    <!-- Rest of your form fields -->
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name" required>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+    </div>
+    <div class="form-group">
+        <textarea name="order-details" placeholder="Order Details..." required></textarea>
+    </div>
+    <button type="submit">Place Order</button>
+</form>
         </section>
 
         <section class="contact-info">
@@ -75,5 +78,8 @@
     </main>
 
     <script src="script.js"></script>
+    <footer class="copyright">
+    <p>&copy; 2024 Hanan Baltna. All rights reserved.</p>
+</footer>
 </body>
 </html>
