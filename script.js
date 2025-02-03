@@ -1,22 +1,17 @@
-// Navigation Functions
+// Updated Navigation Functions
 function toggleNav() {
     const nav = document.getElementById('dropdownNav');
+    const hamburger = document.querySelector('.hamburger');
     nav.classList.toggle('show');
+    hamburger.classList.toggle('active'); // Added for animation
 }
 
 function closeNav() {
-    document.getElementById('dropdownNav').classList.remove('show');
-}
-
-// Close menu when clicking outside
-document.addEventListener('click', (event) => {
     const nav = document.getElementById('dropdownNav');
     const hamburger = document.querySelector('.hamburger');
-    
-    if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
-        closeNav();
-    }
-});
+    nav.classList.remove('show');
+    hamburger.classList.remove('active'); // Added for animation
+}
 
 // Smooth Scroll to Sections
 document.querySelectorAll('.dropdown-nav a').forEach(anchor => {
