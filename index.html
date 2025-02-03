@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanan Baltna</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" onclick="toggleNav()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav class="sidenav" id="sidenav">
+        <a href="#home" onclick="closeNav()">Home</a>
+        <a href="#products" onclick="closeNav()">Products</a>
+        <a href="#order" onclick="closeNav()">Order</a>
+        <a href="#contact" onclick="closeNav()">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Hanan Baltna</h1>
+        <p>Premium Products Delivered to You</p>
+    </header>
+
+    <div class="container">
+        <!-- Existing content remains same -->
+        <div class="announcement" id="announcement"></div>
+
+        <div class="gallery">
+            <img src="product1.png" width = "400px"; height = "auto">
+            <img src="product2.png" width = "400px"; height = "auto">
+            <img src="product3.png" width = "400px"; height = "auto">
+        </div>
+
+        <form class="order-form" id="orderForm">
+            <h2>Place Your Order</h2>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="tel" placeholder="Your phone number" required>
+            </div>
+            <div class="form-group">
+                <label>Order Details:</label>
+                <textarea placeholder="Type your order here..." rows="4" required></textarea>
+            </div>
+            <button type="submit">Place Order</button>
+        </form>
+
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Call us: 
+                <a href="tel:+251911064395">+251911064395</a><br>
+                <a href="tel:+251913734466">+251913734466</a>
+            </p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="address">
+                <p>Visit us at: Alem_Bank Near To Ali Mosque</p>
+                <p>አድራሻ ፡  አለምባንክ አሊ መስጂድ 400ሜ ገባብሎ እንገኞለን። </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
