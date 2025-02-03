@@ -1,3 +1,4 @@
+/* styles.css */
 /* Base Styles */
 * {
     margin: 0;
@@ -12,16 +13,17 @@ html {
 
 body {
     background: #f8f9fa;
+    line-height: 1.6;
 }
 
-/* Hamburger Menu - Modern Orange Style */
+/* Hamburger Menu */
 .hamburger {
     position: fixed;
     top: 25px;
     left: 25px;
     z-index: 1001;
     cursor: pointer;
-    background: #e67e22; /* Brand orange color */
+    background: #e67e22;
     padding: 10px;
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
@@ -30,7 +32,7 @@ body {
 }
 
 .hamburger:hover {
-    background: #d35400; /* Darker orange on hover */
+    background: #d35400;
     transform: scale(1.1);
 }
 
@@ -42,7 +44,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Animated X when active */
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -55,6 +56,44 @@ body {
     transform: translateY(-9px) rotate(-45deg);
 }
 
+/* Dropdown Navigation */
+.dropdown-nav {
+    position: fixed;
+    top: 80px;
+    left: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    opacity: 0;
+}
+
+.dropdown-nav.show {
+    opacity: 1;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.dropdown-nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s;
+}
+
+.dropdown-nav a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-nav a:hover {
+    background: #f8f9fa;
+}
+
 /* Header */
 header {
     background: #2c3e50;
@@ -62,6 +101,8 @@ header {
     text-align: center;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 999;
 }
 
 /* Main Content */
@@ -71,4 +112,144 @@ header {
     padding: 0 1.5rem;
 }
 
-/* ... (keep rest of the CSS styles from previous version) ... */
+/* Announcement Section */
+.announcement {
+    background: #e67e22;
+    color: white;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Product Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Order Form */
+.order-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+    background: #2c3e50;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #34495e;
+}
+
+/* Contact Section */
+.contact-info {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    margin: 3rem 0;
+}
+
+.phone-numbers a {
+    display: block;
+    color: #2c3e50;
+    text-decoration: none;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.social-media a {
+    color: #2c3e50;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #3498db;
+}
+
+.address p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Copyright Footer */
+.copyright {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hamburger {
+        top: 15px;
+        left: 15px;
+    }
+
+    .dropdown-nav {
+        top: 70px;
+        left: 15px;
+    }
+
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
