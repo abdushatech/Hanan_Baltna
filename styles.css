@@ -11,33 +11,23 @@ body {
     transition: margin-left 0.5s;
 }
 
-/* Hamburger Visibility Fix */
+/* Hamburger Menu */
 .hamburger {
-    top: 30px;
-    left: 30px;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
 .hamburger .bar {
-    background: #ffffff; /* Changed to white for better contrast */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Copyright Section */
-.copyright {
+    width: 35px;
+    height: 3px;
     background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
+    margin: 6px 0;
+    transition: 0.4s;
 }
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Add ID for order section */
-<section id="orderSection" class="order-form">
 
 /* Side Navigation */
 .sidenav {
@@ -226,3 +216,39 @@ button:hover {
         left: calc(250px + 1rem);
     }
 }
+
+
+
+/* Hamburger Visibility Fix */
+.hamburger {
+    top: 30px;
+    left: 30px;
+}
+
+.hamburger .bar {
+    background: #ffffff; /* Changed to white for better contrast */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Copyright Section */
+.copyright {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add ID for order section */
+<section id="orderSection" class="order-form">
+
+
+
+
+
+
