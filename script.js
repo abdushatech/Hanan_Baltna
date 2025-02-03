@@ -1,233 +1,90 @@
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+// =====================
+// Navigation Functions
+// =====================
+function toggleNav() {
+    const nav = document.getElementById('dropdownNav');
+    nav.classList.toggle('show');
 }
 
-html {
-    scroll-behavior: smooth;
+function closeNav() {
+    document.getElementById('dropdownNav').classList.remove('show');
 }
 
-body {
-    background: #f8f9fa;
-    transition: margin-left 0.5s;
-}
-
-/* Hamburger Menu */
-.hamburger {
-    position: fixed;
-    top: 25px;
-    left: 25px;
-    z-index: 1001;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 8px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.hamburger .bar {
-    width: 30px;
-    height: 2px;
-    background: #2c3e50;
-    margin: 6px 0;
-    transition: 0.4s;
-    transform-origin: left center;
-}
-
-/* Hamburger Animation */
-body.nav-open .top-bar {
-    transform: rotate(45deg) translate(4px, -1px);
-}
-
-body.nav-open .middle-bar {
-    opacity: 0;
-}
-
-body.nav-open .bottom-bar {
-    transform: rotate(-45deg) translate(4px, 1px);
-}
-
-/* Side Navigation */
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #2c3e50;
-    overflow-x: hidden;
-    padding-top: 80px;
-    transition: 0.5s;
-    z-index: 1000;
-}
-
-.sidenav a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #ecf0f1;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    background: #34495e;
-}
-
-/* Header */
-header {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 999;
-}
-
-/* Main Content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* Announcement Section */
-.announcement {
-    background: #e67e22;
-    color: white;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-/* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 3rem 0;
-}
-
-.gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* Order Form */
-.order-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    margin: 2rem 0;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-input:focus, textarea:focus {
-    border-color: #3498db;
-    outline: none;
-}
-
-button {
-    background: #2c3e50;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #34495e;
-}
-
-/* Contact Section */
-.contact-info {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    margin: 3rem 0;
-}
-
-.phone-numbers a {
-    display: block;
-    color: #2c3e50;
-    text-decoration: none;
-    margin: 1rem 0;
-    font-size: 1.1rem;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.social-media a {
-    color: #2c3e50;
-    font-size: 2rem;
-    transition: color 0.3s;
-}
-
-.social-media a:hover {
-    color: #3498db;
-}
-
-.address p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Copyright Footer */
-.copyright {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    const nav = document.getElementById('dropdownNav');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+        closeNav();
     }
+});
 
-    .hamburger {
-        top: 15px;
-        left: 15px;
-    }
+// =====================
+// Smooth Scroll to Order Section
+// =====================
+document.querySelectorAll('a[href="#orderSection"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeNav(); // Close menu when clicking
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-    body.nav-open {
-        margin-left: 0;
-    }
+// =====================
+// Dynamic Announcements
+// =====================
+const announcements = [
+    "🛍 Special Weekend Sale - 30% Off!",
+    "🚚 Free Shipping on Orders Over $75",
+    "🎉 New Collection Just Arrived!",
+    "📞 24/7 Customer Support Available"
+];
 
-    body.nav-open .sidenav {
-        width: 250px;
-    }
+let currentAnnouncement = 0;
+const announcementElement = document.getElementById('announcement');
+
+function rotateAnnouncements() {
+    announcementElement.textContent = announcements[currentAnnouncement];
+    currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
 }
+
+// =====================
+// Form Submission
+// =====================
+document.getElementById('orderForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            alert('Order received! We will contact you shortly.');
+            form.reset();
+        } else {
+            alert('There was an error. Please try again later.');
+        }
+    } catch (error) {
+        alert('Network error. Please check your connection.');
+    }
+});
+
+// =====================
+// Initialization
+// =====================
+// Start announcements rotation
+setInterval(rotateAnnouncements, 3500);
+rotateAnnouncements();
+
+// Initialize any other components here
