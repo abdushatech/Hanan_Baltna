@@ -17,6 +17,16 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// Smooth Scroll to Order Section
+document.querySelectorAll('a[href="#orderSection"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 // Dynamic Announcements
 const announcements = [
     "🛍 Special Weekend Sale - 30% Off!",
@@ -32,23 +42,6 @@ function rotateAnnouncements() {
     announcementElement.textContent = announcements[currentAnnouncement];
     currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
 }
-
-// Form Submission
-document.getElementById('orderForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you! Your order has been received.\nWe will contact you shortly.');
-    e.target.reset();
-});
-
-// Initialize
-setInterval(rotateAnnouncements, 3500);
-rotateAnnouncements();
-
-
-
-
-
-
 
 // Form Submission with Formspree
 document.getElementById('orderForm').addEventListener('submit', async (e) => {
@@ -76,3 +69,7 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
         alert('Network error. Please check your connection.');
     }
 });
+
+// Initialize
+setInterval(rotateAnnouncements, 3500);
+rotateAnnouncements();
