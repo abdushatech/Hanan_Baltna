@@ -1,6 +1,4 @@
-// =====================
 // Navigation Functions
-// =====================
 function toggleNav() {
     const nav = document.getElementById('dropdownNav');
     nav.classList.toggle('show');
@@ -20,22 +18,21 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// =====================
-// Smooth Scroll to Order Section
-// =====================
-document.querySelectorAll('a[href="#orderSection"]').forEach(anchor => {
+// Smooth Scroll to Sections
+document.querySelectorAll('.dropdown-nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        closeNav(); // Close menu when clicking
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        closeNav();
+        const targetId = this.getAttribute('href');
+        if(targetId !== '#') {
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// =====================
 // Dynamic Announcements
-// =====================
 const announcements = [
     "🛍 Special Weekend Sale - 30% Off!",
     "🚚 Free Shipping on Orders Over $75",
@@ -51,9 +48,7 @@ function rotateAnnouncements() {
     currentAnnouncement = (currentAnnouncement + 1) % announcements.length;
 }
 
-// =====================
 // Form Submission
-// =====================
 document.getElementById('orderForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -80,11 +75,6 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
     }
 });
 
-// =====================
-// Initialization
-// =====================
-// Start announcements rotation
+// Initialize
 setInterval(rotateAnnouncements, 3500);
 rotateAnnouncements();
-
-// Initialize any other components here
