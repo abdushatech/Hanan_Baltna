@@ -14,63 +14,45 @@ body {
     background: #f8f9fa;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu - Modern Orange Style */
 .hamburger {
     position: fixed;
     top: 25px;
     left: 25px;
     z-index: 1001;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 8px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background: #e67e22; /* Brand orange color */
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+
+.hamburger:hover {
+    background: #d35400; /* Darker orange on hover */
+    transform: scale(1.1);
 }
 
 .hamburger .bar {
     width: 30px;
     height: 3px;
-    background: #2c3e50;
+    background: white;
     margin: 6px 0;
-    transition: 0.4s;
+    transition: all 0.3s ease;
 }
 
-/* Dropdown Navigation */
-.dropdown-nav {
-    position: fixed;
-    top: 70px;
-    left: 25px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 1000;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+/* Animated X when active */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
 
-.dropdown-nav.show {
-    opacity: 1;
-    max-height: 500px;
-    transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
-}
-
-.dropdown-nav a {
-    display: block;
-    padding: 12px 20px;
-    color: #2c3e50 !important;
-    text-decoration: none;
-    border-bottom: 1px solid #eee;
-    transition: background 0.3s;
-}
-
-.dropdown-nav a:last-child {
-    border-bottom: none;
-}
-
-.dropdown-nav a:hover {
-    background: #f8f9fa;
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 /* Header */
