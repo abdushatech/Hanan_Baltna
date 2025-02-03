@@ -11,67 +11,71 @@ body {
     transition: margin-left 0.5s;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Fix */
 .hamburger {
     position: fixed;
     top: 25px;
     left: 25px;
-    z-index: 1000;
+    z-index: 1001;
     cursor: pointer;
     transition: 0.4s;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .hamburger .bar {
-    width: 35px;
-    height: 3px;
+    width: 30px;
+    height: 2px;
     background: #2c3e50;
     margin: 6px 0;
     transition: 0.4s;
+    transform-origin: left center;
 }
 
-/* Side Navigation */
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #2c3e50;
-    overflow-x: hidden;
-    padding-top: 80px;
-    transition: 0.5s;
+/* Animated X when active */
+body.nav-open .top-bar {
+    transform: rotate(45deg) translate(4px, -1px);
+}
+
+body.nav-open .middle-bar {
+    opacity: 0;
+}
+
+body.nav-open .bottom-bar {
+    transform: rotate(-45deg) translate(4px, 1px);
+}
+
+/* Adjust header position */
+header {
+    position: relative;
     z-index: 999;
 }
 
-.sidenav a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #ecf0f1;
-    display: block;
-    transition: 0.3s;
+/* Navigation positioning fix */
+.sidenav {
+    z-index: 1000;
 }
 
-.sidenav a:hover {
-    background: #34495e;
-    color: #fff;
-}
-
-/* Active State */
+/* Body shift when menu is open */
 body.nav-open {
     margin-left: 250px;
 }
 
-body.nav-open .sidenav {
-    width: 250px;
-}
-
-body.nav-open .hamburger {
-    left: 275px;
-}
-
-body.nav-open .hamburger .bar {
-    background: #ecf0f1;
+@media (max-width: 768px) {
+    .hamburger {
+        top: 15px;
+        left: 15px;
+    }
+    
+    body.nav-open {
+        margin-left: 0;
+    }
+    
+    body.nav-open .sidenav {
+        width: 250px;
+    }
 }
 
 /* Header */
