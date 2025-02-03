@@ -9,77 +9,77 @@
 </head>
 <body>
     <!-- Hamburger Menu -->
-<div class="hamburger" onclick="toggleNav()">
-    <div class="bar top-bar"></div>
-    <div class="bar middle-bar"></div>
-    <div class="bar bottom-bar"></div>
-</div>
+    <div class="hamburger" onclick="toggleNav()">
+        <div class="bar top-bar"></div>
+        <div class="bar middle-bar"></div>
+        <div class="bar bottom-bar"></div>
+    </div>
 
     <!-- Side Navigation -->
     <nav class="sidenav" id="sidenav">
         <a href="#home" onclick="closeNav()">Home</a>
         <a href="#products" onclick="closeNav()">Products</a>
-        <a href="#order" onclick="closeNav()">Order</a>
+        <a href="#orderSection" onclick="closeNav()">Place Order</a>
         <a href="#contact" onclick="closeNav()">Contact</a>
     </nav>
 
     <header>
         <h1>Hanan Baltna</h1>
-        <h1>ሀናን ባልትና</h1><br>
-        <p><font color="red"> <h4>Your #1 Premium Products & Services.</h4> </font></p>
+        <p>Premium Products & Services</p>
     </header>
 
     <main class="container">
-        <section class="announcement" id="announcement">
-            <!-- Dynamic content loaded by JS -->
-        </section>
+        <!-- Announcements -->
+        <section class="announcement" id="announcement"></section>
 
+        <!-- Product Gallery -->
         <section class="gallery">
-<img src="product1.png" width = "300px"; height = "auto">
-            <img src="product2.png" width = "400px"; height = "auto">
-            <img src="product3.png" width = "400px"; height = "auto">
+            <img src="product1.jpg" alt="Product 1">
+            <img src="product2.jpg" alt="Product 2">
+            <img src="product3.jpg" alt="Product 3">
         </section>
 
-        <section class="order-form">
+        <!-- Order Form -->
+        <section id="orderSection" class="order-form">
             <h2>Place Your Order</h2>
-           <form id="orderForm" action="https://formspree.io/f/{your-form-id}" method="POST">
-    <!-- Add hidden email field -->
-    <input type="hidden" name="_replyto" value="hananbedru33@gmail.com">
-    <!-- Rest of your form fields -->
-    <div class="form-group">
-        <input type="text" name="name" placeholder="Full Name" required>
-    </div>
-    <div class="form-group">
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-    </div>
-    <div class="form-group">
-        <textarea name="order-details" placeholder="Order Details..." required></textarea>
-    </div>
-    <button type="submit">Place Order</button>
-</form>
+            <form id="orderForm" action="https://formspree.io/f/{your-form-id}" method="POST">
+                <input type="hidden" name="_replyto" value="hananbedru33@gmail.com">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="order-details" placeholder="Order Details..." rows="4" required></textarea>
+                </div>
+                <button type="submit">Place Order</button>
+            </form>
         </section>
 
+        <!-- Contact Information -->
         <section class="contact-info">
             <h2>Contact Us</h2>
             <div class="phone-numbers">
-                 <a href="tel:+251911064395">+251911064395</a>
-                <a href="tel:+251913734466">+251913734466</a>
+                <a href="tel:+1234567890">+123 456 7890</a>
+                <a href="tel:+0987654321">+098 765 4321</a>
             </div>
             <div class="social-media">
                 <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="t.me/hananbaltna"><i class="fab fa-telegram"></i></a>
-                <a href="https://wa.me/+251911064395"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
             <div class="address">
-                <p>Visit us at: Alem_Bank Near To Ali Mosque</p>
-                <p>አድራሻ ፡  አለምባንክ አሊ መስጂድ 400ሜ ገባብሎ እንገኞለን። </p>
+                <p>123 Business Street<br>Your City, Country</p>
             </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Copyright Footer -->
     <footer class="copyright">
-    <p>&copy; 2024 Hanan Baltna. All rights reserved.</p>
-</footer>
+        <p>&copy; 2024 Hanan Baltna. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
