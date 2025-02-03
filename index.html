@@ -15,13 +15,19 @@
         <div class="bar bottom-bar"></div>
     </div>
 
-    <!-- Side Navigation -->
-    <nav class="sidenav" id="sidenav">
-        <a href="#home" onclick="closeNav()">Home</a>
-        <a href="#products" onclick="closeNav()">Products</a>
-        <a href="#orderSection" onclick="closeNav()">Place Order</a>
-        <a href="#contact" onclick="closeNav()">Contact</a>
-    </nav>
+   <!-- Remove the existing sidenav and update hamburger section -->
+<div class="hamburger" onclick="toggleNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<nav class="dropdown-nav" id="dropdownNav">
+    <a href="#home" onclick="closeNav()">Home</a>
+    <a href="#products" onclick="closeNav()">Products</a>
+    <a href="#orderSection" onclick="closeNav()">Place Order</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+</nav>
 
     <header>
         <h1>Hanan Baltna</h1>
