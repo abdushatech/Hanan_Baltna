@@ -29,10 +29,10 @@ document.querySelectorAll('.dropdown-nav a').forEach(anchor => {
 
 // Dynamic Announcements
 const announcements = [
-    "🛍 Special Weekend Sale - 30% Off!",
-    "🚚 Free Shipping on Orders Over $75",
-    "🎉 New Collection Just Arrived!",
-    "📞 24/7 Customer Support Available"
+    "🛍 በጅምላ ለሚያዙ ደንበኞቻችን ልዩ ቅናሽ እናደርጋለን።",
+    "🚚 ያነጋግሩን ባሉበት እናደርሳለን።",
+    "🎉 ለአዲስ ደንበኞች የ10 % ቅናሽ እናደርጋለን!",
+    "📞 ስለ ጣዕምና ጥራት ምስክሮቻችን ደንበኞቻችን ናቸዉ ስለጎበኙን እናመሰግናለን!"
 ];
 
 let currentAnnouncement = 0;
