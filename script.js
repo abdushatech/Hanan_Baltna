@@ -60,7 +60,7 @@ document.getElementById('orderForm').addEventListener('submit', async (e) => {
         });
         
         if (response.ok) {
-            alert('Order received! We will contact you shortly.');
+            alert('Order received! We will contact you shortly. ስላዘዙን እናመሰግናለን ትዕዛዞትን እንደደረሰ እናሳውቆታለን!');
             form.reset();
         } else {
             alert('There was an error. Please try again later.');
